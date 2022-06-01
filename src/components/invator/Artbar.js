@@ -10,7 +10,7 @@ const Artbar = () => {
           className="fas fa-search text-muted p-2"
           style={{ fontSize: "20px" }}
         />
-        <FormControl
+        <input
           placeholder="Search"
           aria-label="Search"
           aria-describedby="basic-addon1"

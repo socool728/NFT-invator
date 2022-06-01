@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <Nav
       className="d-none d-md-block bg-primary sidebar"
-      activeKey="/settings"
+      activeKey="/generate"
       // onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
     >
       <div className="sidebar-sticky">

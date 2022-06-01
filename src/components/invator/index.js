@@ -7,22 +7,20 @@ import Traits from "./Traits";
 
 const Invator = () => {
   return (
-    <>
-      <Container fluid>
-        <Row>
-          <Sidebar />
-          <Col sm={2} className="border-end over">
-            <Artbar />
-          </Col>
-          <Col sm={7} className="over">
-            <ArtGenerator />
-          </Col>
-          <Col className="border-start">
-            <Traits />
-          </Col>
-        </Row>
-      </Container>
-    </>
+    <Container fluid>
+      <Row>
+        <Sidebar />
+        <Col sm={2} className="border-end over" id="artbar">
+          <Artbar />
+        </Col>
+        <Col sm={7} className="over" id="artgenerate">
+          <ArtGenerator />
+        </Col>
+        <Col className="border-start" id="traits">
+          <Traits />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

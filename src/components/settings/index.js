@@ -1,25 +1,35 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Sidebar from "./Sidebar";
+import SettingNav from "./SettingNav";
+import Setting from "./Setting";
+import Traits from "./traits";
+import Render from "./render";
 
-const Settings = () => {
+const Settings = (props) => {
+  const show = (p) => {
+    switch (p) {
+      case "render":
+        return <Render />;
+      case "traits":
+        return <Traits />;
+
+      default:
+        return <Setting />;
+    }
+  };
   return (
-    <>
-      <Container fluid>
-        <Row>
-          <Sidebar />
-          <Col sm={2} className="border-end over">
-            {/* <Artbar /> */}
-          </Col>
-          <Col sm={7} className="over">
-            {/* <ArtGenerator /> */}
-          </Col>
-          <Col className="border-start">
-            {/* <Traits /> */}
-          </Col>
-        </Row>
-      </Container>
-    </>
+    <Container fluid>
+      <Row>
+        <Sidebar />
+        <Col sm={2} className="border-end">
+          <SettingNav />
+        </Col>
+        <Col className="over" style={{ backgroundColor: "#F9FAFB" }}>
+          {show(props.show)}
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

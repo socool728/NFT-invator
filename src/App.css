@@ -13,7 +13,9 @@
   }
 }
 html {
-  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
 }
 
 .App-header {
@@ -38,9 +40,6 @@ html {
   to {
     transform: rotate(360deg);
   }
-}
-#search .form-control::before {
-  background: url("https://placeimg.com/1000/695/animals");
 }
 .artImageCard {
   min-width: 95px;
@@ -78,7 +77,7 @@ artImage {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 6vw !important;
+  width: 120px !important;
   min-height: 100vh !important;
   z-index: 100;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
@@ -155,9 +154,9 @@ artImage {
 
 .justify-content-between .btn:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity)); 
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
-.row .form-control {
+#imgname {
   border: none;
   border-bottom: 2px solid #1d43d8;
 }
@@ -179,14 +178,47 @@ artImage {
   background-color: rgb(251 207 232 / var(--tw-bg-opacity));
 }
 body::-webkit-scrollbar {
-  width: 0px;               /* width of the entire scrollbar */
+  width: 0px; /* width of the entire scrollbar */
 }
 
-::-webkit-scrollbar{width:6px; border-left:0px solid #E6ECF8;}
-::-webkit-scrollbar-thumb{background-color:#dbeafe;}
+::-webkit-scrollbar {
+  width: 6px;
+  border-left: 0px solid #e6ecf8;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #dbeafe;
+}
 .inputborder {
   border: none !important;
 }
 .form-control:focus {
   color: inherit !important;
+}
+#artnav {
+  width: 58.4vw;
+  background-color: #ffffff;
+}
+@media (max-width: 1000px) {
+  #artbar {
+    display: none;
+  }
+  #traits {
+    display: none;
+  }
+  #artgenerate {
+    width: 87vw;
+  }
+  #artnav {
+    width: 87vw;
+  }
+}
+.cards {
+  cursor: pointer;
+  border-radius: 10px;
+}
+#save {
+  margin-right: 20px !important;
+}
+input {
+  outline: 0px !important;
 }

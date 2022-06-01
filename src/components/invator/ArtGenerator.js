@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import { Row, Col, Form, OverlayTrigger, Tooltip, Container } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Form,
+  OverlayTrigger,
+  Tooltip,
+  Container,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Shuffle from "./Shuffle";
 
 const ArtGenerator = ({ name, ...props }) => {
   return (
     <>
-      <Row
-        className="ps-4 border-bottom position-fixed"
-        style={{ width: "58.4vw", backgroundColor: "#ffffff" }}
-      >
+      <Row className="ps-4 border-bottom position-fixed" id="artnav">
         <Col xs={1}>
           <Link to="ss" className="navs">
             <p className="py-4 navsActive">Design</p>
@@ -21,7 +25,7 @@ const ArtGenerator = ({ name, ...props }) => {
           </Link>
         </Col>
         <Col xs={1} className="navs">
-          <Link to="" className="navs">
+          <Link to="generate" className="navs">
             <p className="py-4">Generate</p>
           </Link>
         </Col>
@@ -85,21 +89,24 @@ const ArtGenerator = ({ name, ...props }) => {
           marginBlock: "76px",
           backgroundColor: "#ffffff",
         }}
-      >
-        ss
-      </Row>
+      ></Row>
       <Container
         style={{
           marginTop: "130px",
-          paddingInline: "18em",
+          minWidth: "500px",
+          maxWidth: "500px",
         }}
       >
-        <div className="d-flex justify-content-between">
-          <Form.Control
+        <div
+          className="d-flex justify-content-between"
+          style={{ width: "500px" }}
+        >
+          <input
             type="text"
             placeholder="Rename token #1"
-            className="d-inline-flex flex-row"
+            className="d-inline-flex flex-row p-0"
             style={{ width: "50%" }}
+            id="imgname"
           />
           <Link
             to="ss"
@@ -119,9 +126,7 @@ const ArtGenerator = ({ name, ...props }) => {
       <Row
         className="py-1 border-top position-fixed bottom-0"
         style={{ width: "58.4vw", backgroundColor: "#ffffff" }}
-      >
-        ss
-      </Row>
+      ></Row>
     </>
   );
 };
