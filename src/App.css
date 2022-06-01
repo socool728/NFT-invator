@@ -158,7 +158,6 @@ artImage {
 }
 #imgname {
   border: none;
-  border-bottom: 2px solid #1d43d8;
 }
 .artImageHistory {
   width: 60px !important;
@@ -221,4 +220,10 @@ body::-webkit-scrollbar {
 }
 input {
   outline: 0px !important;
+}
+bold {
+  font-weight: 500;
+}
+a {
+  text-decoration: none !important;
 }

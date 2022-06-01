@@ -7,11 +7,12 @@ const Traits = () => {
     <>
       <div style={{ height: "50vh", overflowY: "scroll" }}>
         <Row
-          className="border-bottom shadow-sm"
+          className="border-bottom shadow-sm border-start"
           style={{
             position: "fixed",
             width: "100%",
             backgroundColor: "#ffffff",
+            height: "76px",
           }}
         >
           <p className="m-0 py-4 text-muted" style={{ fontWeight: "500" }}>

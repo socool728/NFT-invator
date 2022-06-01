@@ -10,7 +10,7 @@ const Invator = () => {
     <Container fluid>
       <Row>
         <Sidebar />
-        <Col sm={2} className="border-end over" id="artbar">
+        <Col sm={2} className="border-end p-0" id="artbar">
           <Artbar />
         </Col>
         <Col sm={7} className="over" id="artgenerate">

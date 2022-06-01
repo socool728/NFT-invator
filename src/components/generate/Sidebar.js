@@ -10,7 +10,7 @@ const Sidebar = () => {
     >
       <div className="sidebar-sticky">
         <img prop="prop" src="/img/logo-icon.fb39a041.svg" />
-        <p> NFT-Inator</p>
+        <p className="fs-5">NFT</p>
       </div>
       <Nav.Item>
         <Nav.Link href="/">

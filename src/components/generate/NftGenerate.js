@@ -1,12 +1,13 @@
 import React from "react";
-import Body from "./Body";
+import Configure from "./Configure";
 import Header from "./Header";
+import Share from "./Share";
 
 const NftGenerate = () => {
   return (
     <>
       <Header />
-      <Body />
+      <Configure />
     </>
   );
 };

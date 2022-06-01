@@ -17,8 +17,8 @@ const Cards = ({ title, demo, Id, isActive, className }) => {
           display: isActive ? " " : "none",
         }}
       />
-      <p className="mb-1">{title}</p>
-      <p className="text-muted m-0">{demo}</p>
+      <p className="mb-1 text-start">{title}</p>
+      <p className="text-muted m-0 text-start">{demo}</p>
     </Col>
   );
 };

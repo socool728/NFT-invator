@@ -1,19 +1,15 @@
-import React, { useState } from "react";
-import {
-  Row,
-  Col,
-  Form,
-  OverlayTrigger,
-  Tooltip,
-  Container,
-} from "react-bootstrap";
+import React from "react";
+import { Row, Col, OverlayTrigger, Tooltip, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Shuffle from "./Shuffle";
 
 const ArtGenerator = ({ name, ...props }) => {
   return (
     <>
-      <Row className="ps-4 border-bottom position-fixed" id="artnav">
+      <Row
+        className="ps-4 border-bottom position-fixed border-start"
+        id="artnav"
+      >
         <Col xs={1}>
           <Link to="ss" className="navs">
             <p className="py-4 navsActive">Design</p>
@@ -62,13 +58,8 @@ const ArtGenerator = ({ name, ...props }) => {
                 style={{ fontSize: "20px" }}
               />
             </OverlayTrigger>
-            <OverlayTrigger
-              key="suffle"
-              placement="bottom"
-              overlay={<Tooltip id="tooltip-bottom">Shuffle</Tooltip>}
-            >
-              <Shuffle key="shuffle" placement="end" name="end" />
-            </OverlayTrigger>
+            <Shuffle key="shuffle" placement="end" name="end" />
+
             <OverlayTrigger
               key="export"
               placement="bottom"
@@ -83,7 +74,7 @@ const ArtGenerator = ({ name, ...props }) => {
         </Col>
       </Row>
       <Row
-        className="border-bottom position-fixed top-25 py-1"
+        className="border-bottom position-fixed top-25 py-1 border-end"
         style={{
           width: "58.4vw",
           marginBlock: "76px",
@@ -104,12 +95,12 @@ const ArtGenerator = ({ name, ...props }) => {
           <input
             type="text"
             placeholder="Rename token #1"
-            className="d-inline-flex flex-row p-0"
+            className="d-inline-flex flex-row p-0 border-bottom border-primary border-2"
             style={{ width: "50%" }}
             id="imgname"
           />
           <Link
-            to="ss"
+            to="/settings/output"
             className="btn btn-light d-inline-flex mt-3"
             style={{ flex: "right" }}
           >
@@ -119,7 +110,7 @@ const ArtGenerator = ({ name, ...props }) => {
 
         <img
           prop="prop"
-          className="mt-3 border-0"
+          className="mt-3 border shadow-sm "
           style={{ width: "500px", height: "500px", alignSelf: "center" }}
         />
       </Container>

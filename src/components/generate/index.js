@@ -8,7 +8,7 @@ const Generate = () => {
     <Container fluid>
       <Row>
         <Sidebar />
-        <Col className="over">
+        <Col className="over p-0">
           <NftGenerate />
         </Col>
       </Row>

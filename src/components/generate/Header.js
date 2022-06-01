@@ -4,7 +4,7 @@ import { Col, Row } from "react-bootstrap";
 const Header = () => {
   return (
     <div>
-      <h1 className="fw-bolder p-3">NFT Generator</h1>
+      <h1 className="fw-bolder py-3 px-5">NFT Generator</h1>
       <Row className="border-top border-bottom">
         <Col className="d-flex">
           <i

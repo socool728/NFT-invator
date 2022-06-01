@@ -1,134 +1,47 @@
 import React from "react";
-import { Row, InputGroup, FormControl } from "react-bootstrap";
+import { Row, Col, InputGroup, FormControl } from "react-bootstrap";
 import Art from "./Art";
 
 const Artbar = () => {
   return (
-    <div>
-      <InputGroup className="p-3">
-        <i
-          className="fas fa-search text-muted p-2"
-          style={{ fontSize: "20px" }}
-        />
-        <input
-          placeholder="Search"
-          aria-label="Search"
-          aria-describedby="basic-addon1"
-          className="inputborder"
-        />
-      </InputGroup>
-
-      <div id="Accessories">
-        <Row className="bg-light text-dark my-2 py-1 pl-2 border-top border-bottom">
-          <small>Accessories</small>
-        </Row>
-        <Row>
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-        </Row>
-      </div>
-      <div id="Headgear">
-        <Row className="bg-light text-dark my-3 border-top border-bottom">
-          Headgear
-        </Row>
-        <Row>
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-        </Row>
-      </div>
-      <div id="Clothes">
-        <Row className="bg-light text-dark my-3 border-top border-bottom">
-          Clothes
-        </Row>
-        <Row>
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-        </Row>
-      </div>
-      <div id="Eyes">
-        <Row className="bg-light text-dark my-3 border-top border-bottom">
-          Eyes
-        </Row>
-        <Row>
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-        </Row>
-      </div>
-      <div id="Expression">
-        <Row className="bg-light text-dark my-3 border-top border-bottom">
-          Expression
-        </Row>
-        <Row>
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-        </Row>
-      </div>
-      <div id="Skin">
-        <Row className="bg-light text-dark my-3 border-top border-bottom">
-          Skin
-        </Row>
-        <Row>
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-        </Row>
-      </div>
-      <div id="Background">
-        <Row className="bg-light text-dark my-3 border-top border-bottom">
-          Background
-        </Row>
-        <Row>
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-          <Art />
-        </Row>
+    <div className="p-0">
+      <Row
+        className="p-3 border-bottom position-fixed border-end"
+        style={{ backgroundColor: "#ffffff", width: "18vw", height: "76px" }}
+      >
+        <Col sm={2}>
+          <i
+            className="fas fa-search text-muted py-2 ps-3"
+            style={{ fontSize: "20px" }}
+          />
+        </Col>
+        <Col>
+          <input
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="basic-addon1"
+            className="inputborder mt-1"
+          />
+        </Col>
+      </Row>
+      <div className="pt-5 pb-4"></div>
+      <div style={{ overflow: "scroll", height: "92vh" }}>
+        <div id="Accessories">
+          <Row className="bg-light text-dark my-2 py-1 border-top border-bottom">
+            <small>Accessories</small>
+          </Row>
+          <Row>
+            <Art />
+            <Art />
+            <Art />
+            <Art />
+            <Art />
+            <Art />
+            <Art />
+            <Art />
+            <Art />
+          </Row>
+        </div>
       </div>
     </div>
   );
