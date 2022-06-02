@@ -12,8 +12,8 @@ const Traits = () => {
     setIsActive((current) => !current);
   };
   return (
-    <Container style={{ width: "800px" }}>
-      <h3 className="fw-bolder my-4">Traits</h3>
+    <Container className="width-800p">
+      <h3 className="fw-bolder my-5">Traits</h3>
       <Row className="m-0 mb-4">
         <Cards
           Id="save"
@@ -39,13 +39,9 @@ const Traits = () => {
           </Col>
           <Col sm={7} />
           <Col sm={2} className="ps-0">
-            <div className="border rounded my-3 p-2" style={{ width: "100px" }}>
+            <div className="border rounded my-3 p-2 width-100p">
               <small className="text-muted">Count</small>
-              <input
-                type="number"
-                className="border-0 p-0"
-                style={{ width: "100%" }}
-              />
+              <input type="number" className="border-0 p-0 width-100" />
             </div>
           </Col>
         </Row>
@@ -63,14 +59,11 @@ const Traits = () => {
           <ListGroup.Item>
             <Row>
               <Col sm={1}>
-                <div
-                  className="rounded-3 bg-light m-1"
-                  style={{ width: "60px", height: "60px" }}
-                >
+                <div className="rounded-3 bg-light m-1 width-60p height-60p">
                   <img
                     src="/img/Accessories/Bunny-Boy_0001_Layer-044------.png"
                     className="artImage"
-                    prop="sd"
+                    alt=""
                   />
                 </div>
               </Col>

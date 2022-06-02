@@ -221,9 +221,109 @@ body::-webkit-scrollbar {
 input {
   outline: 0px !important;
 }
-bold {
+b {
   font-weight: 500;
 }
 a {
   text-decoration: none !important;
+}
+.bg-white {
+  background-color: #ffffff;
+}
+.bg-blues {
+  background-color: #d5e7fe !important;
+}
+.bg-whites {
+  background-color: #f9fafb;
+}
+.configure {
+  width: 600px !important;
+  height: 500px;
+  margin-top: 150px;
+}
+.width-100 {
+  width: 100%;
+}
+.height-100 {
+  height: 100%;
+}
+.height-50p {
+  height: 50px;
+}
+.width-25p {
+  width: 25px;
+}
+.height-25p {
+  height: 25px;
+}
+.height-200p {
+  height: 200px;
+}
+.height-92 {
+  height: 92vh;
+}
+.height-76p {
+  height: 76px;
+}
+.width-500p {
+  width: 500px !important;
+}
+.height-500p {
+  height: 500px;
+}
+.width-18 {
+  width: 18vw;
+}
+.controlgen {
+  width: 58.4vw;
+  margin-block: 76px !important;
+}
+.mt-130p {
+  margin-top: 130px;
+}
+.width-58 {
+  width: 58.4vw;
+}
+.cursor-p {
+  cursor: pointer;
+}
+.height-50 {
+  height: 50vh;
+}
+.width-200p {
+  width: 200px;
+}
+.width-800p {
+  width: 800px !important;
+}
+.width-100p {
+  width: 100px;
+}
+.height-66p {
+  height: 66px;
+}
+.width-60p {
+  width: 60px;
+}
+.height-60p {
+  height: 50px;
+}
+.ms-200p {
+  margin-left: 200px;
+}
+.border-dash {
+  border: 2px dashed #dee2e6 !important;
+}
+.border-dash:hover {
+  border-color: #6b7280 !important;
+}
+.upload-padding {
+  padding-inline: 15px;
+  padding-block: 11px;
+}
+.folder-padding {
+  padding-top: 15px;
+  padding-bottom: 11px;
+  padding-left: 13px;
+  padding-right: 9px;
 }

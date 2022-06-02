@@ -13,7 +13,7 @@ const Invator = () => {
         <Col sm={2} className="border-end p-0" id="artbar">
           <Artbar />
         </Col>
-        <Col sm={7} className="over" id="artgenerate">
+        <Col sm={7} className="over bg-light" id="artgenerate">
           <ArtGenerator />
         </Col>
         <Col className="border-start" id="traits">

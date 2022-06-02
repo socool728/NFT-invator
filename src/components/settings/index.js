@@ -25,9 +25,7 @@ const Settings = (props) => {
         <Col sm={2} className="border-end">
           <SettingNav />
         </Col>
-        <Col className="over" style={{ backgroundColor: "#F9FAFB" }}>
-          {show(props.show)}
-        </Col>
+        <Col className="over bg-whites">{show(props.show)}</Col>
       </Row>
     </Container>
   );

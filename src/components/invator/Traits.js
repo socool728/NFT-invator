@@ -5,19 +5,9 @@ import ArtHistory from "./ArtHistory";
 const Traits = () => {
   return (
     <>
-      <div style={{ height: "50vh", overflowY: "scroll" }}>
-        <Row
-          className="border-bottom shadow-sm border-start"
-          style={{
-            position: "fixed",
-            width: "100%",
-            backgroundColor: "#ffffff",
-            height: "76px",
-          }}
-        >
-          <p className="m-0 py-4 text-muted" style={{ fontWeight: "500" }}>
-            Traits
-          </p>
+      <div className="overflow-scroll height-50">
+        <Row className="border-bottom shadow-sm border-start bg-white position-fixed width-100 height-76p">
+          <b className="m-0 py-4 text-muted">Traits</b>
         </Row>
         <div className="pt-5 pb-3"></div>
         <ArtHistory />
@@ -27,21 +17,12 @@ const Traits = () => {
         <ArtHistory />
         <ArtHistory />
       </div>
-      <div style={{ height: "50vh", overflowY: "scroll" }}>
-        <Row
-          className="border-bottom border-top shadow-sm"
-          style={{
-            position: "fixed",
-            width: "100%",
-            backgroundColor: "#ffffff",
-          }}
-        >
-          <Col
-            sm={1}
-            className="m-0 py-4 text-muted"
-            style={{ fontWeight: "500" }}
-          >
-            Traits
+      <div className="overflow-scroll height-50">
+        <Row className="border-bottom border-top shadow-sm bg-white position-fixed width-100 height-76p">
+          <Col sm={1} className="m-0 py-4 text-muted">
+            <p>
+              <b>Saved</b>
+            </p>
           </Col>
           <Col sm={1} className="d-flex flex-row-reverse">
             <OverlayTrigger
@@ -49,20 +30,14 @@ const Traits = () => {
               placement="top"
               overlay={<Tooltip id="tooltip-top">Export All</Tooltip>}
             >
-              <i
-                className="fas fa-cloud-download-alt text-muted py-4 ps-2"
-                style={{ fontSize: "20px" }}
-              />
+              <i className="fas fa-cloud-download-alt text-muted my-4 ms-2 fs-4" />
             </OverlayTrigger>
             <OverlayTrigger
               key="createVideo"
               placement="top"
               overlay={<Tooltip id="tooltip-top">Create Promo Video</Tooltip>}
             >
-              <i
-                className="fas fa-video text-muted py-4 px-2"
-                style={{ fontSize: "20px" }}
-              />
+              <i className="fas fa-video text-muted my-4 mx-2 fs-4" />
             </OverlayTrigger>
           </Col>
           <Col sm={10} />

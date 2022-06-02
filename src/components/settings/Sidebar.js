@@ -9,27 +9,24 @@ const Sidebar = () => {
       // onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
     >
       <div className="sidebar-sticky">
-        <img prop="prop" src="/img/logo-icon.fb39a041.svg" />
+        <img src="/img/logo-icon.fb39a041.svg" alt="" />
         <p className="fs-5"> NFT</p>
       </div>
       <Nav.Item>
         <Nav.Link href="/">
-          <i className="fas fa-arrow-left mb-2" style={{ fontSize: "2.5em" }} />
+          <i className="fas fa-arrow-left mb-2 fs-3" />
           <p className="m-0">Back to Designer</p>
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link href="/settings">
-          <i className="fas fa-cog mb-2" style={{ fontSize: "2.5em" }} />
+          <i className="fas fa-cog mb-2 fs-3" />
           <p className="m-0">Settings</p>
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link href="/generate">
-          <i
-            className="far fa-play-circle mb-2"
-            style={{ fontSize: "2.5em" }}
-          />
+          <i className="far fa-play-circle mb-2 fs-3" />
           <p className="m-0">Generate</p>
         </Nav.Link>
       </Nav.Item>

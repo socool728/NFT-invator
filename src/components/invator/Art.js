@@ -8,7 +8,7 @@ const art = () => {
         <img
           src="/img/Accessories/Bunny-Boy_0001_Layer-044------.png"
           className="artImage"
-          prop="sd"
+          alt=""
         />
       </div>
       <small className="text-muted">Bunny boy</small>

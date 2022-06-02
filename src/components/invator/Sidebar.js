@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
+import FileModal from "./FileModal";
 
 const Sidebar = () => {
   return (
@@ -9,9 +10,10 @@ const Sidebar = () => {
       // onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
     >
       <div className="sidebar-sticky">
-        <img prop="prop" src="/img/logo-icon.fb39a041.svg" />
+        <img src="/img/logo-icon.fb39a041.svg" alt="" />
         <p className="fs-5"> NFT</p>
       </div>
+      <FileModal />
       <Nav.Item>
         <Nav.Link href="#Accessories">Accessories</Nav.Link>
       </Nav.Item>

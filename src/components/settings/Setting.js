@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 const Setting = () => {
   return (
-    <Container style={{ width: "800px" }}>
+    <Container className="width-800p">
       <h3 className="fw-bolder my-5">Basic Setting</h3>
       <h4>Collection</h4>
       <p>Metadata for this collection of NFTs</p>
@@ -66,8 +66,7 @@ const Setting = () => {
           />
         </Form.Group>
         <Button
-          className="text-primary fw-bolder"
-          variant="light"
+          className="text-primary fw-bolder bg-blues border-0"
           type="submit"
         >
           Submit
