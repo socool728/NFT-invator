@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+@font-face {
+  font-family: "MyFont";
+  src: url(./font/static/Montserrat-Medium.ttf);
+}
 
 .App-logo {
   height: 40vmin;
@@ -12,10 +16,8 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-html {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+body {
+  font: 15px MyFont !important;
 }
 
 .App-header {
@@ -60,16 +62,11 @@ html {
   min-height: 100vh;
   max-height: 100vh;
 }
-artImageCard {
-  min-width: 95px;
-  min-height: 95px;
-  max-width: 96px;
-  max-height: 96px;
-  border-radius: 0.5em;
+.width-95p {
+  width: 95px;
 }
-artImage {
-  width: 10%;
-  height: 10%;
+.height-95p {
+  height: 95px;
 }
 .sidebar {
   font-size: 0.7em;
@@ -160,8 +157,8 @@ artImage {
   border: none;
 }
 .artImageHistory {
-  width: 60px !important;
-  height: 60px !important;
+  width: 50px !important;
+  height: 50px !important;
 }
 .delete {
   --tw-bg-opacity: 1;
@@ -262,8 +259,8 @@ a {
 .height-92 {
   height: 92vh;
 }
-.height-76p {
-  height: 76px;
+.height-70p {
+  height: 70.5px;
 }
 .width-500p {
   width: 500px !important;
@@ -276,7 +273,7 @@ a {
 }
 .controlgen {
   width: 58.4vw;
-  margin-block: 76px !important;
+  margin-block: 70.5px !important;
 }
 .mt-130p {
   margin-top: 130px;
@@ -308,6 +305,7 @@ a {
 .height-60p {
   height: 50px;
 }
+
 .ms-200p {
   margin-left: 200px;
 }
@@ -326,4 +324,7 @@ a {
   padding-bottom: 11px;
   padding-left: 13px;
   padding-right: 9px;
+}
+.text-blues {
+  color: #d5e7fe !important;
 }

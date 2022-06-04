@@ -2,8 +2,10 @@ import React from "react";
 import { Row, Col, OverlayTrigger, Tooltip, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Shuffle from "./Shuffle";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-const ArtGenerator = ({ name, ...props }) => {
+const ArtGenerator = (props) => {
   return (
     <>
       <Row
@@ -78,11 +80,23 @@ const ArtGenerator = ({ name, ...props }) => {
           </Link>
         </div>
 
-        <img className="mt-3 border shadow-sm width-500p height-500p" alt="" />
+        <img
+          src={props.image.new}
+          className="mt-3 border shadow-sm width-500p height-500p"
+          alt=""
+        />
       </Container>
       <Row className="py-1 border-top position-fixed bottom-0 bg-white width-58"></Row>
     </>
   );
 };
 
-export default ArtGenerator;
+ArtGenerator.propTypes = {
+  image: PropTypes.object,
+};
+
+const mapStateToProps = (state) => ({
+  image: state.image,
+});
+
+export default connect(mapStateToProps, {})(ArtGenerator);

@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -13,22 +14,22 @@ const Sidebar = () => {
         <p className="fs-5"> NFT</p>
       </div>
       <Nav.Item>
-        <Nav.Link href="/">
+        <Link className="text-blues nav-link" to="/">
           <i className="fas fa-arrow-left mb-2 fs-3" />
           <p className="m-0">Back to Designer</p>
-        </Nav.Link>
+        </Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/settings">
+        <Link className="text-blues nav-link" to="/settings">
           <i className="fas fa-cog mb-2 fs-3" />
           <p className="m-0">Settings</p>
-        </Nav.Link>
+        </Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/generate">
+        <Link className="text-blues nav-link" to="/generate">
           <i className="far fa-play-circle mb-2 fs-3" />
           <p className="m-0">Generate</p>
-        </Nav.Link>
+        </Link>
       </Nav.Item>
     </Nav>
   );

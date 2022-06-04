@@ -1,5 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./store";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -9,7 +11,7 @@ import Generate from "./components/generate";
 
 function App() {
   return (
-    <div>
+    <Provider store={store}>
       <Router>
         <Routes>
           <Route path="/" element={<Invator />} />
@@ -22,7 +24,7 @@ function App() {
           <Route path="generate" element={<Generate />} />
         </Routes>
       </Router>
-    </div>
+    </Provider>
   );
 }
 

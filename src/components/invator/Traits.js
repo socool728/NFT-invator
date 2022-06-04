@@ -1,24 +1,27 @@
 import React from "react";
 import { Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 import ArtHistory from "./ArtHistory";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-const Traits = () => {
+const Traits = (props) => {
   return (
     <>
       <div className="overflow-scroll height-50">
-        <Row className="border-bottom shadow-sm border-start bg-white position-fixed width-100 height-76p">
+        <Row className="border-bottom shadow-sm border-start bg-white position-fixed width-100 height-70p">
           <b className="m-0 py-4 text-muted">Traits</b>
         </Row>
         <div className="pt-5 pb-3"></div>
-        <ArtHistory />
-        <ArtHistory />
-        <ArtHistory />
-        <ArtHistory />
-        <ArtHistory />
-        <ArtHistory />
+        {props.image.add &&
+          props.image.add
+            .slice(0)
+            .reverse()
+            .map((a) => {
+              return <ArtHistory img={a} />;
+            })}
       </div>
       <div className="overflow-scroll height-50">
-        <Row className="border-bottom border-top shadow-sm bg-white position-fixed width-100 height-76p">
+        <Row className="border-bottom border-top shadow-sm bg-white position-fixed width-100 height-70p">
           <Col sm={1} className="m-0 py-4 text-muted">
             <p>
               <b>Saved</b>
@@ -47,4 +50,12 @@ const Traits = () => {
   );
 };
 
-export default Traits;
+Traits.propTypes = {
+  image: PropTypes.object,
+};
+
+const mapStateToProps = (state) => ({
+  image: state.image,
+});
+
+export default connect(mapStateToProps, {})(Traits);

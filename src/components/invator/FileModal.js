@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Button, Container, Modal } from "react-bootstrap";
+import { handleChange } from "../../actions/upload";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-const FileModal = (props) => {
+const FileModal = () => {
   const [show, setShow] = useState(true);
 
   const handleClose = () => setShow(false);
@@ -11,14 +14,9 @@ const FileModal = (props) => {
 
   // Programatically click the hidden file input element
   // when the Button component is clicked
-  const handleClick = (event) => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     hiddenFileInput.current.click();
-  };
-  // Call a function (passed as a prop from the parent component)
-  // to handle the user-selected file
-  const handleChange = (event) => {
-    const fileUploaded = event.target.files;
-    console.log(fileUploaded);
   };
 
   return (
@@ -30,6 +28,9 @@ const FileModal = (props) => {
         keyboard={false}
         centered
       >
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
         <Modal.Body className="text-center pt-0">
           <Container className="mt-5">
             <span className="bg-primary folder-padding rounded-circle">
@@ -44,10 +45,10 @@ const FileModal = (props) => {
             <Button className="text-primary fw-bolder bg-blues border-0 width-100 p-2">
               Try with a demo project →
             </Button>
-            <div className="mt-3">
+            <form className="mt-3" onSubmit={onSubmit}>
               <Button
                 className="bg-white width-100 rounded-3 p-5 border-dash"
-                onClick={handleClick}
+                type="submit"
               >
                 <span className="upload-padding rounded-circle bg-blues">
                   <i className="fas fa-upload text-primary"></i>
@@ -61,15 +62,16 @@ const FileModal = (props) => {
                 </small>
                 <input
                   type="file"
-                  id="hidden-upload"
+                  id="imgCollection"
                   ref={hiddenFileInput}
                   onChange={handleChange}
                   style={{ display: "none" }}
                   webkitdirectory="true"
+                  nwdirectory="true"
                   directory="true"
                 />
               </Button>
-            </div>
+            </form>
           </Container>
         </Modal.Body>
       </Modal>
