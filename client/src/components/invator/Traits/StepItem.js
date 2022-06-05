@@ -30,8 +30,9 @@ const StepItem = (props) => {
           />
         </div>
       </Col>
-      <Col xs={7}>
-        <small className="m-0 pt-2 ps-2">{props.img.name}</small>
+      <Col xs={7} className="pt-2">
+        <small className=" pt-2 ps-2">{props.img.name}</small>
+        <br />
         <small className="m-0 ps-2 text-muted">{props.img.collection}</small>
       </Col>
       <Col>

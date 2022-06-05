@@ -9,7 +9,7 @@ const Art = (props) => {
     const add = [];
     if (props.image.new !== null) add.push(...props.image.new.info);
     props.image.image.map((i) => {
-      if (i.name === e.target.alt) {
+      if (i.collection === e.target.alt && i.name === e.target.id) {
         for (let a = 0; a < add.length; a++) {
           if (add[a].collection === i.collection) {
             add.splice(a, 1);
@@ -42,7 +42,8 @@ const Art = (props) => {
         <img
           src={props.url}
           className="artImage width-100 height-100 rounded-3"
-          alt={props.name}
+          alt={props.collection}
+          id={props.name}
         />
       </button>
       <small className="text-muted">{props.name}</small>

@@ -12,7 +12,7 @@ const SavedItem = ({ save }) => {
     });
   };
   return (
-    <Col xs={4} className="my-2">
+    <Col xs={4} className="my-2 text-center">
       <Button
         className="width-95p height-95p rounded-3 bg-light p-0 border-0"
         onClick={clickSavedItem}

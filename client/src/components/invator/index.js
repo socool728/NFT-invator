@@ -29,32 +29,6 @@ const Invator = (props) => {
     if (!props.image.image) return <FileModal />;
   }
 
-  // if(props.image.now != "0") {
-  //     const state = false;
-  //     let save = props.image.save;
-  //     const edit = {
-  //       workspace: props.image.now,
-  //       name: props.name,
-  //       url: props.image.new.url,
-  //       info: props.image.new.info,
-  //     };
-  //     console.log(save);
-  //     save = save.map((u) => {
-  //       if (u.workspace === edit.workspace) {
-  //         state = true;
-  //         return edit;
-  //       } else return u;
-  //     });
-  //     if (!state) {
-  //       edit.workspace = save[save.length - 1]
-  //         ? parseInt(save[save.length - 1].workspace) + 1
-  //         : 1;
-  //       edit.name = save.name ? edit.name : "token #" + edit.workspace;
-  //       save.push(edit);
-  //     }
-  //     saveItem(save);
-  // }
-
   return (
     <Container fluid>
       {fileModal()}

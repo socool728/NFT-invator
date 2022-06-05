@@ -6,7 +6,6 @@ const Sidebar = (props) => {
     <Nav
       className="d-none d-md-block bg-primary sidebar"
       activeKey="#Accessproes"
-      // onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
     >
       <div className="sidebar-sticky">
         <img src="/img/logo-icon.fb39a041.svg" alt="" />

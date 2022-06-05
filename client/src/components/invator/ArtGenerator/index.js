@@ -23,6 +23,38 @@ const ArtGenerator = (props) => {
     }
   }, []);
 
+  const image = () => {
+    if (props.image.new !== null) {
+      if (props.image.new.url.length !== 0) {
+        return (
+          <img
+            src={props.image.new.url}
+            className="mt-3 border shadow-sm width-500p height-500p bg-white"
+            alt=""
+          />
+        );
+      } else {
+        return (
+          <div className="mt-3 border shadow-sm width-500p height-500p text-center p-5 bg-white">
+            <i className="far fa-image fs-2 mt-130p text-muted" />
+            <p className="mt-2 text-muted">
+              Select a trait in the sidebar to get started
+            </p>
+          </div>
+        );
+      }
+    } else {
+      return (
+        <div className="mt-3 border shadow-sm width-500p height-500p text-center p-5 bg-white">
+          <i className="far fa-image fs-2 mt-130p text-muted" />
+          <p className="mt-2 text-muted">
+            Select a trait in the sidebar to get started
+          </p>
+        </div>
+      );
+    }
+  };
+
   return (
     <>
       <Row
@@ -86,12 +118,7 @@ const ArtGenerator = (props) => {
             <i className="far fa-image"> Quality</i>
           </Link>
         </div>
-
-        <img
-          src={props.image.new !== null ? props.image.new.url : ""}
-          className="mt-3 border shadow-sm width-500p height-500p"
-          alt=""
-        />
+        {image()}
       </Container>
       <Row className="py-1 border-top position-fixed bottom-0 bg-white width-58"></Row>
     </>

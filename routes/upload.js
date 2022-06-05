@@ -35,24 +35,16 @@ router.post("/", upload.array("imgCollection"), async (req, res, next) => {
     const reqFiles = [];
     const url = req.protocol + "://" + req.get("host");
     for (let i = 0; i < req.files.length; i++) {
-      for (let j = 0; j < req.body.folderPath.length; j++) {
-        if (
-          req.body.folderPath[j].split("/")[
-            req.body.folderPath[j].split("/").length - 1
-          ] == req.files[i].originalname
-        ) {
-          reqFiles.push({
-            collection:
-              req.body.folderPath[j].split("/")[
-                req.body.folderPath[j].split("/").length - 2
-              ],
-            name: req.files[i].originalname.split(".")[
-              req.files[i].originalname.split(".").length - 2
-            ],
-            url: url + "/public/" + req.files[i].filename,
-          });
-        }
-      }
+      reqFiles.push({
+        collection:
+          req.body.folderPath[i].split("/")[
+            req.body.folderPath[i].split("/").length - 2
+          ],
+        name: req.files[i].originalname.split(".")[
+          req.files[i].originalname.split(".").length - 2
+        ],
+        url: url + "/public/" + req.files[i].filename,
+      });
     }
     res.status(201).json({
       imgCollection: reqFiles,

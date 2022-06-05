@@ -33,7 +33,14 @@ const Artbar = (props) => {
                 <Row className="m-0">
                   {props.image.map((i, indexs) => {
                     if (c === i.collection)
-                      return <Art name={i.name} url={i.url} key={indexs} />;
+                      return (
+                        <Art
+                          name={i.name}
+                          url={i.url}
+                          collection={i.collection}
+                          key={indexs}
+                        />
+                      );
                   })}
                 </Row>
               </div>
