@@ -1,0 +1,51 @@
+{
+  "name": "BOM NFT #1",
+  "description": "BOM NFT's are used as Business Licenses for integrating BOM Token into business. Depending on the number of transactions, NFT owners will receive BOM Rewards. This way, Businesses can offer better discounts to their clients, increasing their sales.",
+  "image": "ipfs://TEST_URI/1.png",
+  "dna": "1f31b27f481b620197cf16608387057e939c901d",
+  "edition": 1,
+  "date": 1654191245658,
+  "link": "https://www.bomcoin.com",
+  "attributes": [
+    {
+      "trait_type": "BACKGROUND",
+      "value": "ORANGE"
+    },
+    {
+      "trait_type": "BASE",
+      "value": "TIGER"
+    },
+    {
+      "trait_type": "EYES",
+      "value": "young and intelligent"
+    },
+    {
+      "trait_type": "MOUTH EXPRESION",
+      "value": "wild"
+    },
+    {
+      "trait_type": "CLOTHES",
+      "value": "CLOTHES 4"
+    },
+    {
+      "trait_type": "ARM",
+      "value": "NONE"
+    },
+    {
+      "trait_type": "GLASSES",
+      "value": "None"
+    },
+    {
+      "trait_type": "HANDS",
+      "value": "None"
+    },
+    {
+      "trait_type": "ACCESORIES",
+      "value": "NONE"
+    },
+    {
+      "trait_type": "HAT",
+      "value": "None"
+    }
+  ]
+}
