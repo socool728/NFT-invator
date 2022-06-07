@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 
 const Output = () => {
   return (
@@ -9,15 +9,25 @@ const Output = () => {
         Dimensions and format used exporting tokens. We highly recommend using
         source files with the same dimensions to reduce generation time.
       </p>
-      <Form.Label htmlFor="outFormat">Format</Form.Label>
-      <Form.Select aria-label="outFormat" id="outFormat">
-        <option>PNG</option>
-        <option value="1">JPEG</option>
-      </Form.Select>
-      <Form.Label htmlFor="outWidth">Width</Form.Label>
-      <Form.Control type="text" id="outWidth" />
-      <Form.Label htmlFor="outHeight">Height</Form.Label>
-      <Form.Control type="text" id="outHeight" />
+
+      <Row>
+        <Col sm={4}>
+          <Form.Label htmlFor="outFormat">Format</Form.Label>
+          <Form.Select aria-label="outFormat" id="outFormat">
+            <option>PNG</option>
+            <option value="1">JPEG</option>
+          </Form.Select>
+        </Col>
+        <Col sm={8} />
+        <Col sm={4} className="mt-3">
+          <Form.Label htmlFor="outWidth">Width</Form.Label>
+          <Form.Control type="text" id="outWidth" />
+        </Col>
+        <Col sm={4} className="mt-3">
+          <Form.Label htmlFor="outHeight">Height</Form.Label>
+          <Form.Control type="text" id="outHeight" />
+        </Col>
+      </Row>
     </div>
   );
 };

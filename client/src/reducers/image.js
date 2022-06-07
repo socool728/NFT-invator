@@ -5,6 +5,7 @@ import {
   IMAGE_SAVE,
   IMAGE_SELECT,
   IMAGE_NEW,
+  CHANGE_STATE,
 } from "../actions/types";
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
   now: "0",
   new: null,
   save: [],
+  state: true,
 };
 
 function imageReducer(state = initialState, action) {
@@ -55,6 +57,11 @@ function imageReducer(state = initialState, action) {
         ...state,
         now: payload,
         new: null,
+      };
+    case CHANGE_STATE:
+      return {
+        ...state,
+        state: false,
       };
 
     default:

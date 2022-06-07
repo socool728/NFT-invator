@@ -4,3 +4,6 @@ export const IMAGE_ADD = "IMAGE_ADD";
 export const IMAGE_SAVE = "IMAGE_SAVE";
 export const IMAGE_SELECT = "IMAGE_SELECT";
 export const IMAGE_NEW = "IMAGE_NEW";
+export const TRAIT_SAVE = "TRAIT_SAVE";
+export const RULE_SAVE = "RULE_SAVE";
+export const CHANGE_STATE = "CHANGE_STATE";

@@ -9,8 +9,10 @@ import New from "./New";
 import Duplicate from "./Duplicate";
 import Export from "./Export";
 import { addName } from "../../../actions/controlart";
+import Rules from "./Rules";
 
 const ArtGenerator = (props) => {
+  const [modalShow, setModalShow] = useState(false);
   const [name, setName] = useState(
     props.image.new ? props.image.new.name : "token #1"
   );
@@ -76,11 +78,10 @@ const ArtGenerator = (props) => {
             <p className="py-4">Generate</p>
           </Link>
         </Col>
-        <Col xs={1} className="navs">
-          <Link to="Rules" className="navs">
-            <p className="py-4">Rules</p>
-          </Link>
+        <Col xs={1} className="navs" onClick={() => setModalShow(true)}>
+          <p className="py-4 navs cursor-p">Rules</p>
         </Col>
+        <Rules show={modalShow} onHide={() => setModalShow(false)} />
         <Col xs={5} />
         <Col>
           <div className="py-4">
@@ -89,7 +90,7 @@ const ArtGenerator = (props) => {
             <Save name={name} />
             <Shuffle key="shuffle" placement="end" name="end" />
 
-            <Export />
+            <Export url={props.image.new ? props.image.new.url : ""} />
           </div>
         </Col>
       </Row>

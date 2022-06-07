@@ -17,7 +17,6 @@ export const handleChange = (e) => {
       payload: res.data.imgCollection,
     });
   });
-  // console.log("---1---");
   // dispatch({
   //   type: IMAGE_LOAD,
   //   payload: "ASFAF",

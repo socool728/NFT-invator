@@ -50,10 +50,6 @@ body {
   max-height: 96px;
   border-radius: 0.5em;
 }
-.artImage {
-  width: 10%;
-  height: 10%;
-}
 .nav-item a {
   font-size: 11px;
 }
@@ -244,6 +240,9 @@ a {
 .height-100 {
   height: 100%;
 }
+.height-56p {
+  height: 56px;
+}
 .height-50p {
   height: 50px;
 }
@@ -282,7 +281,7 @@ a {
   width: 58.4vw;
 }
 .cursor-p {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 .height-50 {
   height: 50vh;
@@ -305,6 +304,7 @@ a {
 .width-60p {
   width: 60px;
 }
+
 .height-60p {
   height: 50px;
 }

@@ -8,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Invator from "./components/invator";
 import Settings from "./components/settings";
 import Generate from "./components/generate";
-import Rules from "./components/rules";
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
           />
           <Route path="settings/output" element={<Settings show="render" />} />
           <Route path="generate" element={<Generate />} />
-          <Route path="rules" element={<Rules />} />
         </Routes>
       </Router>
     </Provider>

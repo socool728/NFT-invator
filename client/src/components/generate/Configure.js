@@ -2,8 +2,6 @@ import React from "react";
 import { Container, Button, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import Cards from "../settings/traits/Cards";
-
 const Configure = () => {
   return (
     <Container className="configure">
@@ -26,19 +24,13 @@ const Configure = () => {
         <Link to="/settings/weighting" className="ms-4">
           Trait name & Rarity →
         </Link>
+        <br />
+        <div className="text-center">
+          <Button variant="primary" className="mt-4  width-100">
+            Submit
+          </Button>
+        </div>
       </div>
-      <Row className="mx-0 my-3">
-        <Cards
-          title="Include saved designs"
-          demo="Any saved designs are generated to be generated"
-          className="me-3"
-        />
-        <Cards
-          title="Completely random"
-          demo="Traits and variations will be generated at random"
-        />
-      </Row>
-      <Button variant="primary width-100">Submit</Button>
     </Container>
   );
 };

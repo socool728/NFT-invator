@@ -6,7 +6,6 @@ const Sidebar = () => {
   return (
     <Nav
       className="d-none d-md-block bg-primary sidebar"
-      activeKey="/generate"
       // onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
     >
       <div className="sidebar-sticky">
@@ -26,15 +25,9 @@ const Sidebar = () => {
         </Link>
       </Nav.Item>
       <Nav.Item>
-        <Link className="text-blues nav-link" to="/generate">
+        <Link className="text-blues nav-link active" to="/generate">
           <i className="far fa-play-circle mb-2 fs-3" />
           <p className="m-0">Generate</p>
-        </Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Link className="text-blues nav-link" to="/rules">
-          <i className="far fa-play-circle mb-2 fs-3" />
-          <p className="m-0">Rules</p>
         </Link>
       </Nav.Item>
     </Nav>

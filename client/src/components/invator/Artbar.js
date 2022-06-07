@@ -26,6 +26,7 @@ const Artbar = (props) => {
               <div key={index}>
                 <Row
                   className="bg-light text-dark my-2 py-1 px-3 border-top border-bottom"
+                  id={c}
                   key={c}
                 >
                   <small>{c}</small>
