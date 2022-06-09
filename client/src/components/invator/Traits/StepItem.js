@@ -16,6 +16,10 @@ const StepItem = (props) => {
       add: remove,
       workspace: props.image.now,
       name: props.image.new.name,
+      type: props.type,
+      width: props.width,
+      height: props.height,
+      quality: props.quality,
     });
   };
 
@@ -49,10 +53,18 @@ const StepItem = (props) => {
 
 StepItem.propTypes = {
   image: PropTypes.object,
+  type: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  quality: PropTypes.number,
 };
 
 const mapStateToProps = (state) => ({
   image: state.image,
+  type: state.setting.type,
+  width: state.setting.width,
+  height: state.setting.height,
+  quality: state.setting.quality,
 });
 
 export default connect(mapStateToProps, {})(StepItem);

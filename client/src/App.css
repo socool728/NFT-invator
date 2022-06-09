@@ -309,6 +309,14 @@ a {
   height: 50px;
 }
 
+.height-503p {
+  height: 503px !important;
+}
+
+.width-498p {
+  width: 498px;
+}
+
 .ms-200p {
   margin-left: 200px;
 }
@@ -330,4 +338,27 @@ a {
 }
 .text-blues {
   color: #d5e7fe !important;
+}
+.z-index-9999 {
+  z-index: 9999999999 !important;
+}
+.move:hover {
+  color: #282c34 !important;
+  cursor: grab;
+}
+
+.move:focus {
+  color: #282c34 !important;
+  cursor: grabbing;
+}
+.move {
+  cursor: grabbing;
+}
+.move:active {
+  color: #282c34 !important;
+  cursor: grabbing;
+}
+.move:target {
+  color: #282c34 !important;
+  cursor: grabbing;
 }

@@ -6,6 +6,7 @@ import { saveTraits, changeState } from "../../../actions/settings";
 
 import Item from "./Item";
 import Count from "./Count";
+import { saveItems } from "../../../actions/controlart";
 
 const Traits = (props) => {
   const [collections, setCollections] = useState([]);
@@ -13,23 +14,11 @@ const Traits = (props) => {
   const [traits, setTraits] = useState([]);
 
   useEffect(() => {
-    let collection = [];
     if (props.image.image) {
-      for (let i = 1; i < props.image.image.length; i++) {
-        if (
-          props.image.image[i - 1].collection != props.image.image[i].collection
-        )
-          collection.push(props.image.image[i - 1].collection);
-        if (
-          i === props.image.image.length - 1 &&
-          props.image.image[i].collection !== collection[collection.length - 1]
-        )
-          collection.push(props.image.image[i].collection);
-      }
-      setCollections(collection);
+      setCollections(props.image.items);
 
       const count = [];
-      collection.map((c) => {
+      props.image.items.map((c) => {
         let i = 0;
         props.image.image.map((img) => {
           if (c === img.collection) i++;
@@ -46,10 +35,10 @@ const Traits = (props) => {
 
       if (props.image.state === true) {
         let trait = [];
-        for (let c = 0; c < collection.length; c++) {
+        for (let c = 0; c < props.image.items.length; c++) {
           let index = 0;
           for (let i = 0; i < props.image.image.length; i++) {
-            if (collection[c] === props.image.image[i].collection) {
+            if (props.image.items[c] === props.image.image[i].collection) {
               const img =
                 props.image.image[i].url.split(")_(")[
                   props.image.image[i].url.split(")_(").length - 1
@@ -91,23 +80,22 @@ const Traits = (props) => {
   };
 
   const changeCollection = (e) => {
+    // console.log(e.target.id);
     let change = traits;
-    let collection = [];
+    let collection = props.image.items;
+    for (let i = 0; i < collection.length; i++) {
+      if (collection[i] === e.target.id) {
+        collection[i] = e.target.value;
+      }
+    }
     for (let i = 0; i < change.length; i++) {
       if (change[i].collection === e.target.id)
         change[i].collection = e.target.value;
     }
-    for (let i = 1; i < change.length; i++) {
-      if (change[i - 1].collection !== change[i].collection)
-        collection.push(change[i - 1].collection);
-      if (
-        i === change.length - 1 &&
-        change[i].collection !== collection[collection.length - 1]
-      )
-        collection.push(change[i].collection);
-    }
+
     saveTraits(change);
-    setCollections(collection);
+    saveItems(collection);
+    // setCollections(collection);
     setTraits(change);
   };
 

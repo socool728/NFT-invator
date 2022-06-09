@@ -9,22 +9,17 @@ const ShuffleBody = (props) => {
   const [checkCollection, setCheckCollection] = useState(null);
   useEffect(() => {
     let collection = [];
-    if (!checkCollection && props.image.image) {
-      for (let i = 0; i < props.image.image.length - 1; i++) {
-        if (
-          props.image.image[i + 1].collection &&
-          props.image.image[i + 1].collection !==
-            props.image.image[i].collection
-        )
-          collection.push({
-            name: props.image.image[i].collection,
-            checked: true,
-          });
+    if (!checkCollection && props.image.items) {
+      for (let i = 0; i < props.image.items.length; i++) {
+        collection.push({
+          name: props.image.items[i],
+          checked: true,
+        });
       }
       setCollections(collection);
       setCheckCollection(collection);
     }
-  }, [props]);
+  }, []);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -46,7 +41,21 @@ const ShuffleBody = (props) => {
             shuffle[Math.floor(Math.random() * (shuffle.length - 1))]
           );
         });
-      shuffleItem(shuffleCollection);
+      shuffleCollection.sort(function (a, b) {
+        return (
+          props.image.items.indexOf(a.collection) -
+          props.image.items.indexOf(b.collection)
+        );
+      });
+      shuffleItem({
+        add: shuffleCollection.reverse(),
+        workspace: props.image.now,
+        name: props.image.new ? props.image.new.name : "token #1",
+        type: props.type,
+        width: props.width,
+        height: props.height,
+        quality: props.quality,
+      });
     }
   };
   return (
@@ -120,10 +129,18 @@ const ShuffleBody = (props) => {
 
 ShuffleBody.propTypes = {
   image: PropTypes.object,
+  type: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  quality: PropTypes.number,
 };
 
 const mapStateToProps = (state) => ({
   image: state.image,
+  type: state.setting.type,
+  width: state.setting.width,
+  height: state.setting.height,
+  quality: state.setting.quality,
 });
 
 export default connect(mapStateToProps, { shuffleItem })(ShuffleBody);

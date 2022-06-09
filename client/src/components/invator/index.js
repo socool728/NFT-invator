@@ -1,43 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Sidebar from "./Sidebar";
 import Artbar from "./Artbar";
 import ArtGenerator from "./ArtGenerator";
 import Traits from "./Traits";
 import { connect } from "react-redux";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import FileControl from "./FileControl";
 
 const Invator = (props) => {
-  const [collections, setCollections] = useState([]);
-  useEffect(() => {
-    let collection = [];
-    if (props.image.image) {
-      for (let i = 1; i < props.image.image.length; i++) {
-        if (
-          props.image.image[i - 1].collection != props.image.image[i].collection
-        )
-          collection.push(props.image.image[i - 1].collection);
-        if (
-          i === props.image.image.length - 1 &&
-          props.image.image[i].collection !== collection[collection.length - 1]
-        )
-          collection.push(props.image.image[i].collection);
-      }
-    }
-    setCollections(collection);
-  }, [props]);
-
-  function fileModal() {
-    if (!props.image.image) return <FileControl />;
-  }
-
   return (
     <Container fluid>
+      <FileControl />
       <Row>
-        <Sidebar collections={collections} />
+        <Sidebar collections={props.image.items} />
         <Col sm={2} className="border-end p-0" id="artbar">
-          <Artbar collections={collections} image={props.image.image} />
+          <Artbar collections={props.image.items} image={props.image.image} />
         </Col>
         <Col sm={7} className="over bg-light" id="artgenerate">
           <ArtGenerator />
@@ -46,7 +24,6 @@ const Invator = (props) => {
           <Traits />
         </Col>
       </Row>
-      {fileModal()}
     </Container>
   );
 };

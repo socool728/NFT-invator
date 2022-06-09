@@ -6,7 +6,6 @@ const arrayMoveMutate = (array, from, to) => {
 const arrayMove = (array, from, to) => {
   array = array.slice();
   arrayMoveMutate(array, from, to);
-  console.log(array);
   return array;
 };
 

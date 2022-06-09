@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button, Row, Col, Form } from "react-bootstrap";
+import { Modal, Button, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Select from "react-select";
@@ -23,6 +23,7 @@ const Rules = (props) => {
               width="30px"
               height="30px"
               className="rounded-3 me-1"
+              alt={i.name}
             />
             {i.name}
           </div>
@@ -88,6 +89,7 @@ const Rules = (props) => {
                               width="30px"
                               height="30px"
                               className="rounded-3 me-1"
+                              alt={props.rule.rule1.name}
                             />
                             {props.rule.rule1.name}
                           </div>
@@ -126,6 +128,7 @@ const Rules = (props) => {
                               width="30px"
                               height="30px"
                               className="rounded-3 me-1"
+                              alt={props.rule.rule2.url}
                             />
                             {props.rule.rule2.name}
                           </div>

@@ -6,15 +6,9 @@ import {
   IMAGE_SAVE,
   IMAGE_SELECT,
   IMAGE_NEW,
+  ITEM_SAVE,
+  SAVE_CHANGE,
 } from "./types";
-
-function shuffles(a) {
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
 
 export const addItem = (add) => {
   api.post("/art/", add, {}).then((res) => {
@@ -35,7 +29,7 @@ export const removeItem = (remove) => {
 };
 
 export const shuffleItem = (shuffle) => {
-  api.post("/art/", { add: shuffles(shuffle) }, {}).then((res) =>
+  api.post("/art/", shuffle, {}).then((res) =>
     store.dispatch({
       type: IMAGE_ADD,
       payload: res.data,
@@ -68,5 +62,20 @@ export const addName = (item) => {
   store.dispatch({
     type: IMAGE_ADD,
     payload: item,
+  });
+};
+
+export const saveItems = (items) => {
+  store.dispatch({
+    type: ITEM_SAVE,
+    payload: items,
+  });
+};
+
+export const saveChange = (items) => {
+  console.log(items);
+  store.dispatch({
+    type: SAVE_CHANGE,
+    payload: items,
   });
 };

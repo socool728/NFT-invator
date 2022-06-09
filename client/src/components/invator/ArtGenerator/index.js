@@ -8,7 +8,7 @@ import Save from "./Save";
 import New from "./New";
 import Duplicate from "./Duplicate";
 import Export from "./Export";
-import { addName } from "../../../actions/controlart";
+import { addName, saveChange } from "../../../actions/controlart";
 import Rules from "./Rules";
 
 const ArtGenerator = (props) => {
@@ -22,8 +22,21 @@ const ArtGenerator = (props) => {
       setName(props.image.new.name);
       news.name = props.image.new.name;
       addName(news);
+
+      // }
+      // if (props.image.new) {
+      //   let save = props.image.save;
+      //   save.map((s, i) => {
+      //     if (s.workspace === props.image.new.workspace)
+      //       return (s = props.image.new);
+      //   });
+      //   console.log(save);
+      //   saveItems(save);
     }
   }, []);
+  useEffect(() => {
+    if (props.image.new) setName(props.image.new.name);
+  }, [props.image.now]);
 
   const image = () => {
     if (props.image.new !== null) {
@@ -86,11 +99,14 @@ const ArtGenerator = (props) => {
         <Col>
           <div className="py-4">
             <New />
-            <Duplicate />
+            <Duplicate save={props.image.save} now={props.image.now} />
             <Save name={name} />
             <Shuffle key="shuffle" placement="end" name="end" />
 
-            <Export url={props.image.new ? props.image.new.url : ""} />
+            <Export
+              url={props.image.new ? props.image.new.url : ""}
+              method={props.type}
+            />
           </div>
         </Col>
       </Row>
@@ -108,6 +124,12 @@ const ArtGenerator = (props) => {
                 let news = { ...props.image.new };
                 news.name = e.target.value;
                 addName(news);
+                let save = props.image.save;
+                for (let i = 0; i < save.length; i++) {
+                  if (save[i].workspace === props.image.now)
+                    save[i].name = e.target.value;
+                }
+                saveChange(save);
               }
             }}
             value={name}
@@ -128,10 +150,12 @@ const ArtGenerator = (props) => {
 
 ArtGenerator.propTypes = {
   image: PropTypes.object,
+  type: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({
   image: state.image,
+  type: state.setting.type,
 });
 
 export default connect(mapStateToProps, {})(ArtGenerator);

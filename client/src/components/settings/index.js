@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import SettingNav from "./SettingNav";
 import Setting from "./Setting";
 import Traits from "./traits";
-import Render from "./render";
+import Render from "./Render";
 
 const Settings = (props) => {
   const show = (p) => {

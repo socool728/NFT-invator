@@ -18,17 +18,31 @@ const Art = (props) => {
         add.push(i);
       }
     });
+    add.sort(function (a, b) {
+      return (
+        props.image.items.indexOf(a.collection) -
+        props.image.items.indexOf(b.collection)
+      );
+    });
     if (!props.image.new)
       addItem({
-        add: add,
+        add: add.reverse(),
         workspace: props.image.now,
         name: "token #1",
+        type: props.type,
+        width: props.width,
+        height: props.height,
+        quality: props.quality,
       });
     else
       addItem({
-        add: add,
+        add: add.reverse(),
         workspace: props.image.now,
         name: props.image.new.name,
+        type: props.type,
+        width: props.width,
+        height: props.height,
+        quality: props.quality,
       });
   };
 
@@ -52,10 +66,18 @@ const Art = (props) => {
 };
 Art.propTypes = {
   image: PropTypes.object,
+  type: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  quality: PropTypes.number,
 };
 
 const mapStateToProps = (state) => ({
   image: state.image,
+  type: state.setting.type,
+  width: state.setting.width,
+  height: state.setting.height,
+  quality: state.setting.quality,
 });
 
 export default connect(mapStateToProps, {})(Art);

@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 import StepItem from "./StepItem";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import SavedItem from "./SavedItem";
+import { saveChange } from "../../../actions/controlart";
+import { saveAs } from "file-saver";
 
 const Traits = (props) => {
+  useEffect(() => {
+    if (props.image.new) {
+      let save = props.image.save;
+      for (let i = 0; i < save.length; i++) {
+        if (save[i].workspace === props.image.now) {
+          save[i] = props.image.new;
+        }
+      }
+      saveChange(save);
+    }
+  }, [props.image.new]);
   return (
     <>
       <div className="overflow-scroll height-50">
@@ -34,15 +47,27 @@ const Traits = (props) => {
               placement="top"
               overlay={<Tooltip id="tooltip-top">Export All</Tooltip>}
             >
-              <i className="fas fa-cloud-download-alt text-muted my-4 ms-2 fs-4" />
+              <i
+                className="fas fa-cloud-download-alt text-muted my-4 ms-2 fs-4 cursor-p"
+                onClick={() => {
+                  if (props.image.save)
+                    props.image.save.map((s) => {
+                      const image =
+                        s.url.split("/")[s.url.split("/").length - 1] +
+                        "." +
+                        props.type;
+                      saveAs(s.url, image);
+                    });
+                }}
+              />
             </OverlayTrigger>
-            <OverlayTrigger
+            {/* <OverlayTrigger
               key="createVideo"
               placement="top"
               overlay={<Tooltip id="tooltip-top">Create Promo Video</Tooltip>}
             >
               <i className="fas fa-video text-muted my-4 mx-2 fs-4" />
-            </OverlayTrigger>
+            </OverlayTrigger> */}
           </Col>
           <Col sm={10} />
         </Row>
@@ -61,10 +86,12 @@ const Traits = (props) => {
 
 Traits.propTypes = {
   image: PropTypes.object,
+  type: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({
   image: state.image,
+  type: state.setting.type,
 });
 
 export default connect(mapStateToProps, {})(Traits);

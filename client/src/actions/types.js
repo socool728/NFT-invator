@@ -7,3 +7,6 @@ export const IMAGE_NEW = "IMAGE_NEW";
 export const TRAIT_SAVE = "TRAIT_SAVE";
 export const RULE_SAVE = "RULE_SAVE";
 export const CHANGE_STATE = "CHANGE_STATE";
+export const ITEM_SAVE = "ITEM_SAVE";
+export const RENDER_SAVE = "RENDER_SAVE";
+export const SAVE_CHANGE = "SAVE_CHANGE";
